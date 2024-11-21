@@ -1,4 +1,6 @@
-console.log("Hi, there!");
+// console.log("Hi, there!");
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     let computerChoice;
@@ -22,10 +24,7 @@ function getComputerChoice() {
 function getHumanChoice() {
     
     let humanChoice = prompt("What do you pick? Rock, paper or scissors");
-    console.log(humanChoice.slice(0, 1))
-    console.log(("rock" || "paper" || "scissors"));
     
-
     switch (humanChoice.slice(0, 1)) {
         case ("r"):
             humanChoice = "Rock"
@@ -44,13 +43,6 @@ function getHumanChoice() {
             alert("It was chosen for you: " + humanChoice);
             break;
     }
-
-    // Replace if statement below with switch case above
-    // Problem with || operator and printing past first check option to console
-    // if (humanChoice.toLowerCase() === ("rock" || "paper" || "scissors")) {
-    //     console.log(humanChoice);
-    //     // alert("You chose: " + message);
-    // } 
     
     return humanChoice;
 }
