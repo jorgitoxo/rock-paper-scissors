@@ -1,25 +1,14 @@
-// console.log("Hi, there!");
 function getComputerChoice() {
     const options = 3;
     let computerChoice = Math.floor(Math.random() * options);
     
     // Make a random choice out of 3 for the computer to play.
-    switch (computerChoice) {
-        case 0:
-            computerChoice = "Rock"
-            break;
-        case 1:
-            computerChoice = "Paper"
-            break;
-        default:
-            computerChoice = "Scissors"
-            break;
-    }
-    return computerChoice
+    return computerChoice = computerChoice === 0 ? 
+        "Rock" : computerChoice === 1 ? 
+        "Paper" : "Scissors";
 }
 
 function getHumanChoice() {
-    
     let humanChoice = prompt("Rock, Paper or Scissors?").toLowerCase();
     
     switch (humanChoice.slice(0, 1)) {
@@ -80,3 +69,5 @@ function playGame() {
 
     return;
 }
+
+playGame();
