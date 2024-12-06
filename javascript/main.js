@@ -1,8 +1,7 @@
+// Make a random choice out of 3 options for the computer to play.
 function getComputerChoice() {
     const options = 3;
     let computerChoice = Math.floor(Math.random() * options);
-    
-    // Make a random choice out of 3 for the computer to play.
     return computerChoice = computerChoice === 0 ? 
         "Rock" : computerChoice === 1 ? 
         "Paper" : "Scissors";
@@ -51,23 +50,24 @@ function playGame() {
             computerChoice === "Paper" ? (console.log("“You win! Scissors beats Paper”."), humanScore++) :
             computerChoice === "Rock" ? (console.log("“You lose! Rock beats Scissors”."), computerScore++) : ""
         }
-        console.log(humanChoice + "\t" + computerChoice);
-        console.log("H: " + humanScore + "\t" + "C: " + computerScore);
+        console.log(humanChoice + "\t" + computerChoice + "\n" + "H: " + humanScore + "\t" + "C: " + computerScore);
+    }
+
+    function announceResults(humanScore, computerScore) {
+        humanScore === computerScore ? (console.log("*** Tie! ***"), alert("*** Tie! ***")) :
+        humanScore > computerScore ? (console.log("*** You are winner!!! ***"), alert("*** You are winner!!! ***")) : 
+        (console.log("*** You are loser... ***"), alert("*** You are loser... ***"));
     }
     
     for (let round = 1; round < rounds + 1; round++) {
         let computerChoice = getComputerChoice();
         let humanChoice = getHumanChoice();
 
-        playRound(humanChoice, computerChoice);
         console.log("Round: " + round);
+        playRound(humanChoice, computerChoice);
     }
     
-    humanScore === computerScore ? (console.log("*** Tie! ***"), alert("*** Tie! ***")) :
-    humanScore > computerScore ? (console.log("*** You are winner!!! ***"), alert("*** You are winner!!! ***")) : 
-    (console.log("*** You are loser... ***"), alert("*** You are loser... ***"));
-
-    return;
+    return announceResults(humanScore, computerScore);
 }
 
 playGame();
