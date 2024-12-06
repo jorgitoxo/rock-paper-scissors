@@ -62,17 +62,11 @@ function reset () {
 
 function playGame() {
     let computerChoice = getComputerChoice();
+    // why does having the event handler inside a while result in a page crash?
     buttonsPanel.addEventListener('click', (event) => {
         let humanChoice = event.target.textContent;
         playRound(humanChoice, computerChoice);    
     });    
-
-    // why does this result in a page crash?
-    // while ((humanScore && computerScore) < maxScore) {
-    //     playRound(humanChoice, computerChoice); 
-    // }
-    // announceResults();
 }
 
 playGame();
-
